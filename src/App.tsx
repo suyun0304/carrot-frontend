@@ -1,42 +1,48 @@
-import React, { ChangeEvent } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Container, Grid } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
 
-import Title from "./Title";
-import Text from "./Text";
-import Adult from "./Adult";
-import Photo from "./Photo";
-import Counter from "./Counter";
-import Adder from "./Adder";
-import WelcomeName from "./WelcomeName";
-import ConditionalText from "./ConditionalText";
-import HiddenName from "./HiddenName";
-
-import { KeyboardEvent } from "react";
-
-import { useState } from "react";
-import Button from "./Button";
-
-import Calculator from "./Calculator";
-import Test from "./pages/Test";
-
-const App = () => {
-  const [latestName, setLatestName] = useState("");
-  const updateLatestName = (name: string) => {
-    setLatestName(name);
-  };
-
+const App = (): JSX.Element => {
   return (
-    <>
-      <Button name="hello" callback={updateLatestName} />
-      <Button name="world" callback={updateLatestName} />
-      <Button name="nextop" callback={updateLatestName} />
-      <article>{latestName} is clicked</article>
-
-      <Calculator />
-
-      <Test />
-    </>
+    <main>
+      <AppBar position="fixed">
+        <Toolbar></Toolbar>
+      </AppBar>
+      <Toolbar />
+      내용
+      <AppBar position="fixed" sx={{ top: "auto", bottom: 0 }}>
+        <Toolbar>
+          <Grid container>
+            <Grid item xs>
+              <Box display="flex" justifyContent="center">
+                홈
+              </Box>
+            </Grid>
+            <Grid item xs>
+              <Box display="flex" justifyContent="center">
+                동네생활
+              </Box>
+            </Grid>
+            <Grid item xs>
+              <Box display="flex" justifyContent="center">
+                내 근처
+              </Box>
+            </Grid>
+            <Grid item xs>
+              <Box display="flex" justifyContent="center">
+                채팅
+              </Box>
+            </Grid>
+            <Grid item xs>
+              <Box display="flex" justifyContent="center">
+                나의 당근
+              </Box>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+    </main>
   );
 };
 
